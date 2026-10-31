@@ -18,6 +18,18 @@ r = R(1,2);
 p = P(1,2);
 fprintf('Pearson correlation coefficient: %.4f and P-Value: %.4g\n', r, p);
 
+% Attempt to print into file.
+if isfolder("./data_points/oil-orl")
+	filename = sprintf("data_%s.txt", datestr(now, 'dd_mm_yyyy'));
+	folderpath = './data_points/oil-orl';
+	filepath = fullfile(folderpath, filename);
+	if ~isfile(filepath)
+		fid = fopen(filepath, 'wt');
+		fprintf(fid, 'Pearson correlation coefficient: %.4f and P-Value: %.4g\nCovariance of the two: %.4f\n', r, p, cov(OILvals_shared, ORLvals_shared));
+		fclose(fid);
+	end
+end
+
 % Covariance.
 fprintf('Covariance of the two: %.4f\n', cov(OILvals_shared, ORLvals_shared));
 
