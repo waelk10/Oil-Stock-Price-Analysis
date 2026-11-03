@@ -1,0 +1,4 @@
+Pearson correlation coefficient: 0.6896 and P-Value: 0
+Covariance of the two: 256.0767
+Pearson correlation coefficient: 474.3126 and P-Value: 474.3
+Covariance of the two: 1847.5643
